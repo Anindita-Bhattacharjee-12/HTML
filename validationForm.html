@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Validation with innerHTML</title>
+        <link rel="stylesheet" href="ValidationForm.css">
+        <script src="ValidationForm.js"></script>
+    </head>
+    <body>
+        <h2 style="text-align: center; font-size: x-small;">Simple Form with Validation</h2>
+        <form onsubmit="return handlesubmit()">
+            <label>Full Name</label><br>
+            <input type="text" id="fullname"><br>
+            <span id="NameError"></span><br>
+             <label>Age</label><br>
+            <input type="number" id="age"><br>
+            <span id="AgeError"></span><br>
+             <label>Phone Number</label><br>
+            <input type="text" id="phoneNumber"><br>
+            <span id="NumberError"></span><br>
+             <label>Email Address</label><br>
+            <input type="text" id="emailAddress"><br>
+            <span id="EmailError"></span><br>
+            <div class="buttonContainer">
+            <button type="submit" class="submit">Submit</button>
+            <button type="reset" class="reset">Reset</button>
+        </div>
+        </form>
+    </body>
+</html>
