@@ -1,4 +1,5 @@
 function handlesubmit(){
+                console.log("Validation.js form is loaded");
                 var nameError=document.getElementById("NameError");
                 nameError.innerHTML="";
                 var ageError=document.getElementById("AgeError");
@@ -7,11 +8,15 @@ function handlesubmit(){
                 numberError.innerHTML="";
                 var emailError=document.getElementById("EmailError");
                 emailError.innerHTML="";
+                var passwordError=document.getElementById("PasswordError");
+                passwordError.innerHTML="";
+
 
                 var name=document.getElementById("fullname").value;
                 var age=document.getElementById("age").value;
                 var phoneNumber=document.getElementById("phoneNumber").value;
                 var email=document.getElementById("emailAddress").value;
+                var password=document.getElementById("Password").value;
 
                 var hasError=false;
                 if(name.trim()===""){
@@ -43,12 +48,20 @@ function handlesubmit(){
                     hasError=true;
                 }
                 else if(!email.includes("@")||!email.includes(".")){
-                    document.getElementById("EmailError").innerHTML="Invalid email address";
+                   document.getElementById("EmailError").innerHTML="Invalid email address";
+                   hasError=true;
+                }
+                if(password.trim()===""){
+                    document.getElementById("PasswordError").innerHTML="Password is required";
                     hasError=true;
                 }
-              if(hasError){
-                return false;
-              } 
+                else if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8}$/.test(password)){
+                   document.getElementById("PasswordError").innerHTML="Invalid password";
+                   hasError=true;
+                }
+                if(hasError){
+                   return false;
+                } 
               alert("Form submitted successfully");
               return false;
         }
