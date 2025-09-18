@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h1{
+                font-size:x-small;
+            }
+            body{
+                background-color: aquamarine;
+            }
+            table{
+                width:67%;
+                margin-top: 1%;
+                height: 30%;
+                border: 2px solid white;
+                background-color:white;
+                padding-left: 5px;
+                padding-right:1%;
+            }
+            input[type="text"]{
+                width:100%;
+                height: 10%;
+            }
+            input[type="number"]{
+                width:100%;
+                height: 10%;
+            }
+            input[type="email"]{
+                width:100%;
+                height: 10%;
+            }
+            input[type="password"]{
+                width:100%;
+                height: 10%;
+            } 
+            #state {
+                width:100%;
+                height: 10%;
+            }
+        </style>
+        <script>
+            function handlesubmit(){
+                var fname=document.getElementById("fname").value;
+                var lname=document.getElementById("lname").value;
+                var address=document.getElementById("address").value;
+                var city=document.getElementById("city").value;
+                var state=document.getElementById("state").value;
+                var phone=document.getElementById("phone").value;
+                var email=document.getElementById("email").value;
+                var password=document.getElementById("password").value;
+                var cpassword=document.getElementById("cpassword").value;
+                var oamount=document.getElementById("oamount").value;
+                var comment=document.getElementById("comment").value;
+                if(fname===""||lname===""||address===""||city===""||state===""|| phone===""||email===""||password===""||cpassword===""||oamount==""||comment===""){
+                    alert("Fill the form");
+                    return false;
+                }
+                var nameAlphabet=/^[A-Za-z]+$/;
+                if(!nameAlphabet.test(fname)||!nameAlphabet.test(lname)){
+                alert("Name must contain only alphabets");
+                return false;
+                }
+                var phoneNumber=/^\d{11}$/;
+                if(!phoneNumber.test(phone)){
+                alert("Phone number must be exactly 11 digits");
+                return false;
+                }
+                var passwordDigit=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{6,}$/;
+                 if(!passwordDigit.test(password)){
+                alert("Password must contain at least one uppercase letter,one lowercase letter,one digit,and one special character.");
+                return false;
+                }
+                if(password!=cpassword){
+                alert("Passwords do not match.");
+                return false;
+                }
+                alert("Registration Complete");
+                return true;
+            }
+        </script>
+        <body>
+            <center>   
+            <h1 style="color: red; text-align: center;">Donar Information</h1> 
+            <form onsubmit=" return handlesubmit()">
+            <table>    
+                <tr>
+                    <td>First Name</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="fname" required></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="lname" required></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="address" required></td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="city" required></td>
+                </tr>
+                <tr>
+                    <td>State</td>
+                </tr>
+                <tr>
+                    <td>
+                     <select id="state" name="state" required>
+                     <option value=" " >Select a State</option>
+                     <option value=" ">Bangladesh</option> 
+                     <option value=" ">Canada</option>
+                     <option value=" ">USA</option>   
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                </tr>
+                <tr>
+                    <td><input type="number" id="phone" required></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                </tr>
+                <tr>
+                    <td><input type="email" id="email" required></td>
+                </tr>
+                <tr>
+                    <td>Create Password(min 8 characters)</td>
+                </tr>
+                <tr>
+                    <td><input type="password" id="password" required></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password</td>
+                </tr>
+                <tr>
+                    <td><input type="password" id="cpassword" required></td>
+                </tr>
+                <tr>
+                    <td>Donation Amount</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="des">None
+                        <input type="radio" name="des">500BDT
+                        <input type="radio" name="des">1000BDT
+                        <input type="radio" name="des">2000BDT
+                        <input type="radio" name="des">3000BDT
+                        <input type="radio" name="des">Other
+                    </td>
+                </tr>
+                <tr>
+                    <td>Other Amount</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="oamount" required></td>
+                </tr>
+                <tr>
+                    <td>
+                    <input type="checkbox" id="check1" required>I am not interested in giving on a regular basis
+                    </td>
+                </tr>  
+                <tr>
+                    <td>
+                <p style="color: red;" id="check2" required>Additional Information</p> 
+                </td>
+                </tr> 
+                <tr>
+                    <td>
+                    <input type="checkbox" id="check3" required>I would like my gift to remain anonymous
+                    </td>
+                </tr>  
+                <tr>
+                    <td>
+                    <input type="checkbox" id="check4" required>My employers offer a matching gift program
+                    </td>
+                </tr>  
+                <tr>
+                    <td>
+                    <input type="checkbox" id="check5" required>Please don't send a thank you letter
+                    </td>
+                </tr>  
+                <tr>
+                    <td>Comments</td>
+                </tr>
+                <tr>
+                    <td><textarea cols="60" rows="2" id="comment" required></textarea></td>
+                </tr>
+                <tr>
+                    <td><input type="reset" value="Reset">
+                    <input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+            </form>
+            </center>
+        </body>
+    </head>
+</html>
