@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1 id="header">Hello,I am header<span id="temp">Hello,mister</span></h1>
+    <div id="para">The orginal paragraph</div>
+    <button onclick="but()">Click Me</button>
+    <script>
+      var a=document.createElement("p");
+      a.innerHTML="Hello,I am new here";
+      var con=document.getElementById("para");
+      var conn=document.getElementById("header");
+      conn.appendChild(a);
+      var co=document.getElementById("temp");
+      conn.removeChild(co);
+      var newHeading=document.createElement("h1");
+      newHeading.innerHTML="This is heading replaced the old one";
+      var oldHeading=document.getElementById("para");
+      document.body.replaceChild(newHeading,oldHeading);
+      function but(){
+      document.write("This replaced the whole page");
+      }
+    </script>
+  </body>
+</html>

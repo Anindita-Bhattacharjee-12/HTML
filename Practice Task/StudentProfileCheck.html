@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title id="HII">Student Profile</title>
+    </head>
+    <body>
+        <h1>Student Profile and Status Checker</h1>
+    <script>
+        console.log("Student Information");
+        var titleTag = document.getElementsByTagName("title");
+        titleTag.textContent = "Hello IVY lEague";
+
+        var name="Anindita";
+        var age=22;
+        var isStudent=true;
+        console.log("Name: ",name);
+        console.log("Age: ",age);
+        console.log("Is student? ",isStudent);
+
+        console.log("Mark Optained...");
+        var mark=[90,90,90];
+        var sum=0;
+        for(var i in mark){
+            console.log("Subject Marks: ",mark[i]);
+            sum+=mark[i];
+        }
+        console.log("Summation of marks: ",sum);
+
+        console.log("Adultancy and passed or not...")
+        if(age>=18){
+            console.log("She is an adult");
+            if(sum>99){
+                console.log("She is passed");
+            }
+            else{
+                console.log("She is failed");
+            }
+        }
+        else{
+            console.log("She is failed");
+            if(sum>99){
+                console.log("She is passed");
+            }
+            else{
+                console.log("She is failed");
+            }
+        }
+
+        function student(name,age,isStudent,mark,sum){
+            console.log("Summary of Information ");
+            console.log("Name:",name);
+            console.log("Age: ",age);
+            console.log("Is she student? ",isStudent);
+            var sum=0;
+            for(var i in mark){
+            console.log("Subject Marks: ",mark[i]);
+            sum+=mark[i];
+        }
+            console.log("Sum of Marks:",sum);
+        } 
+        student(name,age,isStudent,mark,sum);
+
+        console.log("Button clicked.....")
+        function showMessage(){
+            alert("You clicked the button");
+            var sum=0;
+            for(var i in mark){
+            console.log("Subject Marks: ",mark[i]);
+            sum+=mark[i];
+        }
+            console.log("Sum of Marks:",sum);
+
+        }
+
+        function showInformation(){
+            alert("You clicked the button");
+             console.log("Summary of Information ");
+            console.log("Name:",name);
+            console.log("Age: ",age);
+            console.log("Is she student? ",isStudent);
+
+        }
+    </script>
+    <br><br>
+    <button onclick="showMessage()">Click me</button>
+    <br><br>
+    <button onclick="showInformation()">Click me</button>
+
+    </body>
+</html>

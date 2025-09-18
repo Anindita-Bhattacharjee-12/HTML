@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2 id="hedaer" style="text-align: center;">This is Web Tech Class</h2>
+    <div style="text-align: center;">
+      <button id="mybutton" onclick="toggleScene()">Click Me</button>
+    </div>
+    <script>
+        var changed = false; 
+      function toggleScene() {
+        var heading = document.getElementById("hedaer");
+        var button = document.getElementById('mybutton');
+        if (!changed) {
+          heading.innerHTML = 'Replaced';
+          document.body.style.backgroundColor = 'blue';
+          button.innerHTML = 'Go Back';
+          changed = true;
+        } else {
+          heading.innerHTML = 'This is Web Tech Class';
+          document.body.style.backgroundColor = 'white';
+          button.innerHTML = 'Click Me';
+          changed = false;
+        }
+      }
+    </script>
+  </body>
+</html>
